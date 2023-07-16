@@ -15,10 +15,22 @@ public class RadioTest {
 
     @Test
     public void increaseNumberStation() {
-        Radio next = new Radio();
-        next.setNumberStation(7);
+        Radio numb = new Radio();
+        numb.setNumberStation(7);
+
+        numb.increaseNumberStation();
         int expected = 8;
-        int actual = next.getNumberStation();
+        int actual = numb.getNumberStation();
         Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void ShouldSetVolume() {
+        Radio vol = new Radio();
+        vol.setNumberStation(150);
+        int expected = 0;
+        int actual = vol.getNumberStation();
+        Assertions.assertEquals(expected, actual);
+
     }
 }

@@ -1,5 +1,5 @@
 public class Radio {
-    public int numberStation;
+    private int numberStation;
     public int Volume;
 
     public int getNumberStation() {
@@ -21,4 +21,19 @@ public class Radio {
             numberStation = numberStation + 1;
         }
     }
+
+    public int getVolume() {
+        return Volume;
+    }
+
+    public void setVolume(int newVolume) {
+        if (newVolume < 0) {
+            return;
+        }
+        if (newVolume > 100) {
+            return;
+        }
+        numberStation = newVolume;
+    }
+
 }
