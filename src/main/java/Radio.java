@@ -1,6 +1,7 @@
 public class Radio {
     private int numberStation;
-    public int Volume;
+    private int Volume;
+
 
     public int getNumberStation() {
         return numberStation;
@@ -16,11 +17,19 @@ public class Radio {
         numberStation = newNumberStation;
     }
 
-    public void increaseNumberStation() {
+    public void increaseNextNumberStation() {
         if (numberStation < 9) {
             numberStation = numberStation + 1;
         }
     }
+
+    public void increasePrevNumberStation() {
+        if (numberStation > 0) {
+            numberStation = numberStation - 1;
+        } else
+            numberStation = 9;
+    }
+
 
     public int getVolume() {
         return Volume;
@@ -33,7 +42,7 @@ public class Radio {
         if (newVolume > 100) {
             return;
         }
-        numberStation = newVolume;
+        Volume = newVolume;
     }
 
 }
