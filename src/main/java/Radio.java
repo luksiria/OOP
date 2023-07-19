@@ -18,7 +18,9 @@ public class Radio {
     }
 
     public void increaseNextNumberStation() {
-        if (numberStation < 9) {
+        if (numberStation >= 9) {
+            numberStation = 0;
+        } else {
             numberStation = numberStation + 1;
         }
     }
@@ -29,7 +31,6 @@ public class Radio {
         } else
             numberStation = 9;
     }
-
 
     public int getVolume() {
         return Volume;
@@ -44,5 +45,6 @@ public class Radio {
         }
         Volume = newVolume;
     }
-
 }
+
+
