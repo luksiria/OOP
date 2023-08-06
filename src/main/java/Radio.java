@@ -1,73 +1,64 @@
 public class Radio {
     private int numberStation;
-    private int maxStation = 9;
-    private int amountStation;
-    private int amountMaxStation = 10;
     private int Volume;
 
-    public Radio(int amountStation) {
-        this.amountStation = amountStation;
-        this.amountMaxStation = amountMaxStation;
-    }
+    private int amountStation;
+    private int maxNumberStation;
+
     public Radio() {
+        maxNumberStation = 9;
 
     }
 
-    public int getAmountStation() {
-        return amountStation;
-    }
-
-    public void setAmountStation(int newAmountStation) {
-        if (newAmountStation < 0) {
-            return;
-        }
-        if (newAmountStation >= amountMaxStation) {
-            return;
-        }
-        amountStation = newAmountStation;
+    public Radio(int amountStation) {
+        maxNumberStation = amountStation - 1;
     }
 
     public int getNumberStation() {
         return numberStation;
     }
 
-    public void setNumberStation(int newNumberStation) {
-        if (newNumberStation < 0) {
+
+    public void setNumberStation(int numberStation) {
+        if (numberStation < 0) {
             return;
         }
-        if (newNumberStation >= amountMaxStation) {
+        if (numberStation > maxNumberStation) {
             return;
         }
-        numberStation = newNumberStation;
+        this.numberStation = numberStation;
     }
 
     public void setNextNumberStation() {
-        if (numberStation >= maxStation) {
+        if (numberStation >= maxNumberStation) {
             numberStation = 0;
         } else {
-            numberStation = numberStation + 1;
+            numberStation++;
         }
+        this.numberStation = numberStation;
     }
 
     public void setPrevNumberStation() {
-        if (numberStation >= 0) {
-            numberStation = numberStation - 1;
-        } else
-            numberStation = maxStation;
+        if (numberStation <= 0) {
+            numberStation = maxNumberStation;
+        } else {
+            numberStation--;
+        }
+        this.numberStation = numberStation;
     }
 
     public int getVolume() {
         return Volume;
     }
 
-    public void setVolume(int newVolume) {
-        if (newVolume < 0) {
+    public void setVolume(int volume) {
+        if (volume < 0) {
             return;
         }
-        if (newVolume > 100) {
+        if (volume >= 100) {
             return;
         }
-        Volume = newVolume;
+        Volume = volume;
     }
 }
 

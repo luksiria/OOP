@@ -3,17 +3,12 @@ import org.junit.jupiter.api.Test;
 
 public class RadioTest {
 
-    @Test
-    public void SetAmount() {
-        Radio amount = new Radio(5);
-        Assertions.assertEquals(5, amount.getAmountStation());
-    }
 
     @Test
     public void ShouldSetNumberStation() {
-        Radio numb = new Radio();
-        numb.setNumberStation(10);
-        int expected = 0;
+        Radio numb = new Radio(20);
+        numb.setNumberStation(15);
+        int expected = 15;
         int actual = numb.getNumberStation();
         Assertions.assertEquals(expected, actual);
 
@@ -22,10 +17,11 @@ public class RadioTest {
 
     @Test
     public void setNextNumberStation() {
-        Radio numb = new Radio();
-        numb.setNumberStation(9);
+        Radio numb = new Radio(20);
+       numb.setNumberStation(19);
 
-        numb.setNextNumberStation();
+       numb.setNextNumberStation();
+
         int expected = 0;
         int actual = numb.getNumberStation();
         Assertions.assertEquals(expected, actual);
@@ -34,10 +30,10 @@ public class RadioTest {
     @Test
     public void setPrevNumberStation() {
         Radio numb = new Radio();
-        numb.setNumberStation(8);
 
         numb.setPrevNumberStation();
-        int expected = 7;
+
+        int expected = 9;
         int actual = numb.getNumberStation();
         Assertions.assertEquals(expected, actual);
     }
